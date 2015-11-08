@@ -1,0 +1,78 @@
+header #nav {
+  @include clearfix; //Height of elements maintain
+  @include background-image(linear_gradient(top, lighten($navBackground, 10) $navBackground)); //compass linear gradient
+  width :100%;
+  z-index: 100; //this means it is on top of other content
+  .navbar{
+    @include container;
+    .name{
+      @include span(4);
+      float: left;
+      font-weight: $heavy;
+      font-family: $headFont;
+      text-align: center;
+      text-transform: uppercase;
+      background: $navNameBG;
+      a { // "Name" text
+        color: $navForeground;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        font-size: 1.5em;
+        @include breakpoint(max-width $small){//whenever small, do
+          font-size: 1.2em;
+          span{display:none}; //hide "messenger" if it gets too small!
+        }
+      }
+    }
+    ul {//unordered list
+      @include span(8 at 4 of 12);
+      li{
+        float: left; //pull to the left of my name
+        a {//anchor
+          color: $orange;
+          font: $mainFont;
+          font-size: 1em;
+          padding: 10px 10px 10px 45px; //45 for icon room
+          display: inline-block;
+          text-decoration: none;
+          //ICON STYLES//
+          background-size: 30px;
+          background-repeat: no-repeat;
+          background-position: 5px;
+
+          &.info {background-image: url('../images/icons/info.png'); } //if icon and called "info"
+          &.cv {background-image: url('../images/icons/cv.png'); } //if icon and called "cv"
+          &.portfolio {background-image: url('../images/icons/portfolio.png'); } //if icon and called "portfolio"
+          &.references {background-image: url('../images/icons/references.png'); } //if icon and called "references"
+          &.contact {background-image: url('../images/icons/contact.png'); } //if icon and called "contact"
+
+          &:hover {
+            background-color: $navHover;
+          }
+          @include breakpoint(0 $small){//when width in this range
+            padding: 10px 18px;//reset padding
+            &::after{//pseudoclass?
+              content: '\000a0'; //nbsp character identity
+              display: block;
+            }
+            span {display:none;}//don't show text(only icons)
+          } //breakpoint
+          @include breakpoint($small $medium){//when width in this range
+            padding: 10px;//reset padding on left (for icons)
+            &.icon {background-image:none;}//don't show icons, only text
+          } //breakpoint
+
+          &.active{
+            background-color: $darkbackground;
+            color: $light;
+
+          }
+        }
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+#welcome {
+  @include background-image(linear-gradient(top, darken($backgroundColor, 10), $backgroundColor));
+
+  article {
+    text-align: center;
+    @include container(70%);
+  }
+  h1 {
+    font-weight: normal;
+    line-height: 100%;
+    padding: 10px 0;
+  }
+  .gallery {
+    @include clearfix;
+    img {
+      @include border-radius(20%);
+      display: none;
+
+        @include breakpoint($small) {
+          @include gallery(1 of 4);
+          display: inline;
+          &.hidesm {display:none;}
+        }
+        @include breakpoint($medium) {
+          display: inline;
+          @include gallery(1 of 5);
+          &.hidesm {display:inline;}
+        }
+
+    }
+  }
+}

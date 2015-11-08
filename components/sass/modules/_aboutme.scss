@@ -1,0 +1,67 @@
+#aboutme {
+  @include background-image(linear-gradient(top,  $navBackground, lighten($navBackground, 10)));
+  .heading{
+    h1{
+      font-size : 3em;
+      font-weight : $normal;
+    }
+  }
+  #usefulinfo {
+    @include clearfix;
+    section {
+      @include breakpoint($small){
+        @include span(1 of 3);
+      }
+      @include breakpoint(450px $small){
+        &.checklist {
+          @include span(1 of 2);
+        }
+      }
+      h2{
+        color: $purple;
+        font-size: 1.3em;
+        line-height: 110%;
+        padding: 10px 0;
+      }
+      p{
+        font-size: 1em;
+        line-height: 130%;
+      }
+      strong{
+        color: $purple;
+      }
+      ul{
+        li{
+          list-style: square ;
+          margin-left: 10%;
+          line-height: 115%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    section#keynoteinfo {
+      ul {
+        margin: 0;
+      }
+    }
+
+
+  }//usefulinfo
+  #employme{
+    max-width: 70%;
+    @include breakpoint($medium)
+    {
+      max-width: 50%;
+    }
+    margin: auto;
+    border: 3px solid $pink;
+    padding: 10px;
+    h2{
+      color: darken($purple, 10);
+      text-align: center;
+    }
+      background-color: $backgroundColor;
+  }
+
+
+}//aboutme
