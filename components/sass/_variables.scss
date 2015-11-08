@@ -1,0 +1,52 @@
+// _variables.scss
+// =================
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500,300,700);
+@include border-box-sizing; //uses border box sizing like the old IE...sweet.
+
+//Susy Global Settings
+$susy: (
+  columns: 12,
+  container: 60em,
+  gutters: 1/4,
+  gutter-position: inside
+);
+
+//colours to use
+$darkbackground  : #49483E;
+$lightforeground  : #F8F8F2;
+$dxdy : #75715E;
+$pink : #F92672;
+$blue : #66D9EF;
+$green   : #A6E22E;
+$orange  : #FD971F;
+$purple  : #AE81FF;
+$light :$lightforeground;
+$dark  :$darkbackground;
+
+$backgroundColor : $darkbackground;
+$typeDefault     : $lightforeground;
+$navBackground   : $dxdy;
+$navForeground   : $pink;
+$navHover        : $dxdy;
+$navNameBG      : $orange;
+$headersubbg     : $orange;
+
+//Font variables
+
+$font-family: 'Alegreya Sans', Alegreya, sans-serif;
+
+$thin : 300;
+$normal : 400;
+$bold : 500;
+$heavy : 700;
+
+
+$headFont : $thin 1.5em/1.5em $font-family;
+$mainFont : $thin 1em/1.5em $font-family;
+$headColor: $pink;
+
+//Breakpoint variables - used for MediaQueries
+$narrow: 400px;
+$small: 650px;
+$medium: 960px;
+$wide: 1200px;

@@ -1,0 +1,56 @@
+#portfolio {
+  @include background-image(linear-gradient(top,  $navBackground, lighten($navBackground, 10)));
+  h1{
+    color:$purple;
+    margin: auto;
+  }
+  header {
+    margin-bottom: 20px;
+    @include container(90%);
+    @include breakpoint($medium){
+      @include container(); //fullwidth
+      @include pad(1,1);
+    }
+
+  }
+  .site{
+    @include container(100%);
+    @include pad(1,1);
+
+    //automate flexbox using sass
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
+    @include breakpoint($small){
+      @include pad(7,1);
+    }
+
+    padding: 200px 0;//fallback for older browsers when flexbox isn't implemented
+
+    .content{
+      @include border-radius(10px);
+      background: rgba($light, .99);
+      color: $pink;
+      padding: 20px;
+    }
+
+  }
+
+  #tpccots {
+      @include backImage('../images/harry/sites/tpcc.png');
+  }
+  #wcc {
+    @include backImage('../images/harry/sites/wcc.png');
+  }
+  #holiday {
+    @include backImage('../images/harry/sites/holiday.png');
+  }
+  #harrymessenger {
+    @include backImage('../images/harry/sites/harrymessenger.png');
+  }
+  #future {
+    @include backImage('../images/harry/sites/future.png');
+  }
+
+}

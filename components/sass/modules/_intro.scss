@@ -1,0 +1,44 @@
+header{
+  .fullheight{
+    @include backImage('../images/harry/welcome.png');
+
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
+    .hgroup{
+      h1 {//my name
+        color:$orange;
+        font-size: 5em;
+        font-weight: $heavy;
+        line-height:.8em;
+        @include text-shadow($dark 0 0 20px);//mixin for all browsers (compass)
+        text-align: center;
+      }
+      h2 {//"box" with text in
+        padding:20px 0;
+        color:$pink;
+        display:block;
+        background: rgba($darkbackground, .5); //SASS funtion
+        width: 30%;
+        max-width: 360px;
+        min-width: 320px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        border: 1px solid $orange;
+      }
+      p{
+        text-align: center;
+        span{ //down arrow using fontawesome, using SASS nesting :D
+          padding-top: 40px;
+          max-width:50px;
+          text-allign: centre;
+          color: $orange;
+          font-size: 4em;
+        }
+      }
+    }
+
+  }
+}
